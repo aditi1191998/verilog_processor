@@ -1,9 +1,9 @@
 module processor(clk1,clk2);
 
-input clk1,clk2;
+input clk1,clk2; // 2 phased clock to isolate stages
 reg [31:0] pc,if_id_ir,if_id_npc;
 reg [31:0] id_ex_ir,id_ex_npc,id_ex_a,id_ex_b,id_ex_imm;
-reg [2:0] id_ex_type,ex_mem_type,mem_wb_type;
+reg [2:0] id_ex_type,ex_mem_type,mem_wb_type; //type decided in EX stage
 reg [31:0] ex_mem_ir, ex_mem_aluout,ex_mem_b;
 reg ex_mem_cond;
 reg [31:0] mem_wb_ir,mem_wb_aluout,mem_wb_lmd;
